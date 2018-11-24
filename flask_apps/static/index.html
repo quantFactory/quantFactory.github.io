@@ -1,0 +1,71 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @quantFactory Sign out
+0
+0 0 quantFactory/deep_LIQ
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
+deep_LIQ/flask_apps/static/hello.html
+11b6258  9 hours ago
+@quantFactory quantFactory emp detaiils added
+     
+41 lines (30 sloc)  983 Bytes
+<html>
+
+<head>
+    
+<title>
+        
+        
+    HELLO APP 
+</title>
+</head>
+<body>
+        <script>
+                $(document).ready(function () {
+                  //code here
+                
+                  $("#btn").click(function(event){
+                        let message = {
+                            name: $("#name-input").val()
+                        }
+                        $.post("http://127.0.0.1:5000/hello",JSON.stringify(message),function(response){
+                            $("#greeting").text(response.greeting)
+                            console.log(response); 
+                        }); 
+                    });
+                
+                });
+                    
+                </script>
+<form action="/hello"  method="POST">
+<input id="name-input" type="text"/>
+<button id="btn">SubmitName</button>
+</form>
+<p id="greeting"></p>
+
+
+<script type=text/javascript src="{{
+    url_for('static', filename='j.js') }}"></script>
+
+</body>
+
+</html>
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Press h to open a hovercard with more details.
